@@ -57,3 +57,19 @@ const team = [
 
     teamContainerElement.innerHTML += htmlCard;
   }
+
+  function newTeamMember( name, image ,role) {
+      
+    return {
+        name: name,
+        image: image,
+        role: role,
+    }
+
+    console.log(name,image,role);
+  }
+
+  function stampaMembroTeam(teamMember){
+    const htmlCard = getHTMLCard(teamMember);
+    teamContainerElement.innerHTML += htmlCard;
+  }
