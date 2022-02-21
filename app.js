@@ -73,3 +73,34 @@ const team = [
     const htmlCard = getHTMLCard(teamMember);
     teamContainerElement.innerHTML += htmlCard;
   }
+
+  const button = document.getElementById('addMemberButton');
+  button.addEventListener('click', addNewMember);
+
+  const nameInput = document.getElementById('name');
+  const imageInput = document.getElementById('image');
+  const roleInput = document.getElementById('role');
+
+  function addNewMember() {
+      const name = nameInput.value;
+      const image= imageInput.value;
+      const role= roleInput.value;
+
+      if(!name || !image || !role){
+          alert('I dati inseriti non sono corretti.');
+          return;
+      }
+
+      console.log(name, image, role);
+
+      const teamMember = newTeamMember(name, image, role);
+      console.log(teamMember);
+
+      team.push ( teamMember );
+
+      stampaMembroTeam(teamMember);
+
+      nameInput = '';
+      imageInput = '';
+      roleInput = '';
+  }
